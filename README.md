@@ -1,29 +1,36 @@
-# AetherMind
+# AetherMind v1.1 — Intelligence / Reasoning Layer
 
-**Advanced Self-Evolving Intelligence Core**
+**Role in the ecosystem:** Evidence → Hypotheses → Confidence → Recommendation
 
-AetherMind is a next-generation autonomous monitoring and intelligence system designed for resilience, deep analysis, and continuous self-awareness.
+## Purpose
 
-## Why AetherMind is stronger
+AetherMind is the reasoning layer. It does not only detect anomalies — it forms hypotheses and produces recommendations with explicit confidence scores.
 
-- Deeper metrics collection (CPU, Memory, Disk, Load, Processes, Network, Boot time)
-- Statistical anomaly detection using mean + standard deviation
-- Persistent logging (`aether.log`)
-- Larger history buffer (200 snapshots)
-- Cleaner modular design
-- Professional dual reports (console + file)
-- Built for long-term evolution
+## Reasoning Pipeline
 
-## Core Files
+```
+Collect Evidence
+      ↓
+Generate Hypotheses
+      ↓
+Score Confidence
+      ↓
+Emit Recommendation (Evidence First)
+```
 
-| File                | Purpose                          |
-|---------------------|----------------------------------|
-| `core.py`           | Main intelligence engine         |
-| `aether_state.json` | Persistent state & history       |
-| `aether_report.txt` | Latest human-readable report     |
-| `aether.log`        | Operational log                  |
+Rule: **No strong recommendation when confidence is low.**
 
-## Quick Start
+## Outputs
+
+| File                        | Purpose                              |
+|-----------------------------|--------------------------------------|
+| `core.py`                   | Intelligence engine                  |
+| `aether_state.json`         | Persistent state + history           |
+| `aether_recommendations.json` | Recent reasoned decisions          |
+| `aether_report.txt`         | Human-readable report                |
+| `aether.log`                | Operational log                      |
+
+## Run
 
 ```bash
 pip install -r requirements.txt
@@ -32,9 +39,9 @@ python core.py
 
 ## Automation
 
-GitHub Actions workflow runs the engine on a schedule and commits the updated state & report automatically.
+Runs every 2 hours via GitHub Actions.
 
 ---
 
-**Author**: mfathialrahman-crypto  
-**Vision**: Human-centric, sovereign, continuously improving intelligence.
+**Ecosystem position:**  
+Receives context → produces reasoned recommendations with confidence.
