@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  run-core:
+  cycle:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -29,14 +29,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Execute AetherMind Core
+      - name: Execute AetherMind
         run: python3 core.py
 
       - name: Commit updates
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add aether_state.json aether_report.txt aether.log || true
+          git add aether_state.json aether_report.txt aether_recommendations.json aether.log || true
           git diff --cached --quiet && echo "No changes" && exit 0
-          git commit -m "⚡ AetherMind cycle — auto update"
+          git commit -m "AetherMind v1.1 intelligence cycle"
           git push
