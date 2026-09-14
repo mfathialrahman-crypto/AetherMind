@@ -168,5 +168,39 @@
       "confidence": 0.8
     },
     "confidence": 0.8
+  },
+  {
+    "timestamp": "2026-09-14T16:06:02.194803+00:00",
+    "evidence": [
+      {
+        "signal": "cpu",
+        "value": 3.0
+      },
+      {
+        "signal": "memory",
+        "value": 7.9
+      },
+      {
+        "signal": "disk",
+        "value": 40.3
+      },
+      {
+        "signal": "load_avg",
+        "value": 1.03
+      }
+    ],
+    "hypotheses": [
+      "No significant issues detected"
+    ],
+    "anomalies": [
+      "STABLE: Metrics within normal operating range"
+    ],
+    "recommendation": {
+      "action": "continue_normal_operations",
+      "priority": "info",
+      "reason": "System appears stable",
+      "confidence": 0.8
+    },
+    "confidence": 0.8
   }
 ]
